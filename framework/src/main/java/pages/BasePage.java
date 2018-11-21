@@ -7,10 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BasePage {
-    AndroidDriver<AndroidElement> driver;
+public abstract class BasePage {
 
-    public BasePage(AndroidDriver<AndroidElement> driver) {
+    protected AndroidDriver<AndroidElement> driver;
+
+    protected BasePage(AndroidDriver<AndroidElement> driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
@@ -20,7 +21,7 @@ public class BasePage {
         return this;
     }
 
-    public void waitUntilVisible(AndroidElement element) {
+    protected void waitUntilVisible(AndroidElement element) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOf(element));
     }

@@ -4,8 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.AdditionalTab;
+import sections.AdditionalTab;
 import pages.MainPage;
+import sections.MoreOptionsTab;
+import sections.NumbersSection;
 
 import java.net.MalformedURLException;
 
@@ -14,32 +16,33 @@ public class AdditionalFunctionsTests {
 
     @BeforeClass
     public void setupDriver() throws MalformedURLException {
-        DesiredCapabilitiesSettings.start();
-        driver = DesiredCapabilitiesSettings.setUp();
+        AppiumServerUtils.start();
+        driver = AppiumServerUtils.setUp();
     }
 
     @Test
     public void verifyMoreOptionsTabElementsPresentAndClickable() {
 
         MainPage mainPage = new MainPage(driver);
+        MoreOptionsTab moreOptionsTab = new MoreOptionsTab(driver);
         mainPage.openMoreOptionsTab();
 
         Assert.assertTrue(mainPage.isMoreOptionsWindowDisplayed());
-        Assert.assertEquals(mainPage.getCountOfMoreOptionsTabElements(), 3);
+        Assert.assertEquals(moreOptionsTab.getCountOfMoreOptionsTabElements(), 3);
 
-        mainPage.openHistoryTab();
-        Assert.assertTrue(mainPage.isHistoryPageTitleDisplayed());
+        moreOptionsTab.openHistoryTab();
+        Assert.assertTrue(moreOptionsTab.isHistoryPageTitleDisplayed());
 
         mainPage.goBack();
         mainPage.openMoreOptionsTab();
-        mainPage.openSendFeedbackTab();
-        Assert.assertTrue(mainPage.isSendFeedbackPageTitleDisplayed());
+        moreOptionsTab.openSendFeedbackTab();
+        Assert.assertTrue(moreOptionsTab.isSendFeedbackPageTitleDisplayed());
 
         mainPage.goBack();
         mainPage.goBack();
         mainPage.openMoreOptionsTab();
-        mainPage.openHelpTab();
-        Assert.assertTrue(mainPage.isHelpPageTitleDisplayed());
+        moreOptionsTab.openHelpTab();
+        Assert.assertTrue(moreOptionsTab.isHelpPageTitleDisplayed());
 
         mainPage.goBack();
     }
@@ -55,15 +58,16 @@ public class AdditionalFunctionsTests {
         String clean = "CLR";
 
         MainPage mainPage = new MainPage(driver);
+        NumbersSection numbersSection = new NumbersSection(driver);
         AdditionalTab additionalTab = new AdditionalTab(driver);
 
-        mainPage.clickNeededNumber(firstNumber)
-                .clickNeededNumber(secondNumber)
-                .openAdditionalTab();
+        numbersSection.clickNeededNumber(firstNumber)
+                .clickNeededNumber(secondNumber);
+        mainPage.openAdditionalTab();
         additionalTab
-                .clickNeededLogicalOperation(exponentiation)
+                .clickNeededAdditionalLogicalOperation(exponentiation)
                 .goBack();
-        mainPage.
+        numbersSection.
                 clickNeededNumber(degree)
                 .clickNeededNumber(is);
 
@@ -74,6 +78,6 @@ public class AdditionalFunctionsTests {
 
     @AfterClass
     public void stopServer() {
-        DesiredCapabilitiesSettings.stopServer();
+        AppiumServerUtils.stopServer();
     }
 }
