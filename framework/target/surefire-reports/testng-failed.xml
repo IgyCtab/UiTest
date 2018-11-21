@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]">
+  <test thread-count="1" verbose="0" name="Surefire test(failed)">
+    <classes>
+      <class name="PositiveTests">
+        <methods>
+          <include name="verifyPlusCalculatorFunction"/>
+          <include name="verifyMultiplyCalculatorFunction"/>
+          <include name="stopServer"/>
+          <include name="setupDriver"/>
+        </methods>
+      </class> <!-- PositiveTests -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

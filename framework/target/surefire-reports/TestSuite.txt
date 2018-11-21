@@ -1,0 +1,25 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 34.361 s <<< FAILURE! - in TestSuite
+verifyMultiplyCalculatorFunction(PositiveTests)  Time elapsed: 3.371 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+An unknown server-side error occurred while processing the command. Original error: UiAUtomator shut down unexpectedly
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'GDKHA6761-wf', ip: '2a03:7380:2020:8ac5:f560:fb1f:3076:b221%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14', java.version: '1.8.0_192'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: /Users/dshchetynina/Downloa..., appActivity: com.android.calculator2.Cal..., appPackage: com.google.android.calculator, appWaitActivity: com.android.calculator2.Cal..., appWaitPackage: com.google.android.calculator, databaseEnabled: false, desired: {app: /Users/dshchetynina/Downloa..., deviceName: Nexus_5x, noReset: false, platformName: android}, deviceManufacturer: Google, deviceModel: Android SDK built for x86, deviceName: emulator-5554, deviceScreenSize: 1080x1920, deviceUDID: emulator-5554, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noReset: false, platform: LINUX, platformName: Android, platformVersion: 9, takesScreenshot: true, warnings: {}, webStorageEnabled: false}
+Session ID: 0d2a46bd-29b2-4764-b394-30fa43af7ae0
+*** Element info: {Using=xpath, value=//*[@resource-id='com.google.android.calculator:id/pad_operator']/*[@text='×']}
+	at PositiveTests.verifyMultiplyCalculatorFunction(PositiveTests.java:84)
+
+verifyPlusCalculatorFunction(PositiveTests)  Time elapsed: 0.016 s  <<< FAILURE!
+org.openqa.selenium.NoSuchSessionException: 
+A session is either terminated or not started
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'GDKHA6761-wf', ip: '2a03:7380:2020:8ac5:f560:fb1f:3076:b221%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14', java.version: '1.8.0_192'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: /Users/dshchetynina/Downloa..., appActivity: com.android.calculator2.Cal..., appPackage: com.google.android.calculator, appWaitActivity: com.android.calculator2.Cal..., appWaitPackage: com.google.android.calculator, databaseEnabled: false, desired: {app: /Users/dshchetynina/Downloa..., deviceName: Nexus_5x, noReset: false, platformName: android}, deviceManufacturer: Google, deviceModel: Android SDK built for x86, deviceName: emulator-5554, deviceScreenSize: 1080x1920, deviceUDID: emulator-5554, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noReset: false, platform: LINUX, platformName: Android, platformVersion: 9, takesScreenshot: true, warnings: {}, webStorageEnabled: false}
+Session ID: 0d2a46bd-29b2-4764-b394-30fa43af7ae0
+	at PositiveTests.verifyPlusCalculatorFunction(PositiveTests.java:40)
+
